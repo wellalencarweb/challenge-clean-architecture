@@ -16,23 +16,44 @@ Este projeto demonstra a aplicação dos princípios da Clean Architecture com f
 
 ## 🚀 Como executar
 
-### 1. Subir a aplicação
+### 1. Subir os containers (MySQL e RabbitMQ)
 
 ```bash
 make up
 ```
-
-### 2. Rodar testes
-
+resultado esperado no terminal:
 ```bash
-make test
+[+] Running 3/3
+ ✔ Network challenge-clean-architecture_default  Created
+ ✔ Container mysql                               Started
+ ✔ Container rabbitmq                            Started
 ```
 
-### 3. Parar containers
+### 2. Instalar as dependências do projeto
 
 ```bash
-make down
+make build
 ```
+
+### 3. Executar o sistema de pedidos
+
+```bash
+make run
+```
+
+Ao executar o sistema, você verá a seguinte saída:
+
+```bash
+Starting web server on port :8000
+Starting gRPC server on port 50051
+Starting GraphQL server on port 8080
+```
+
+### Observações
+
+- O servidor HTTP está disponível na porta **8000**
+- O servidor gRPC está disponível na porta **50051**
+- O servidor GraphQL está disponível na porta **8080**
 
 ---
 
@@ -167,16 +188,16 @@ make test
 
 ---
 
-## 🛠️ Makefile
 
-Atalhos disponíveis:
+## 🛠️ Comandos disponíveis no Makefile
 
-| Comando         | Descrição                        |
-|-----------------|----------------------------------|
-| `make up`       | Sobe os containers               |
-| `make down`     | Para os containers               |
-| `make test`     | Executa testes unitários         |
-| `make build`    | Compila o projeto                |
+| Comando     | Descrição                                      |
+|-------------|------------------------------------------------|
+| `make up`   | Sobe os containers Docker (MySQL, RabbitMQ)    |
+| `make down` | Para e remove os containers Docker             |
+| `make build`| Organiza e baixa as dependências do projeto    |
+| `make run`  | Executa a aplicação (inicia os servidores)     |
+| `make test` | Executa todos os testes unitários com verbose  |
 
 ---
 
