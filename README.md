@@ -112,6 +112,7 @@ A resposta será:
   ]
 }
 ```
+![api.png](/img/api.png)
 
 ---
 
@@ -145,6 +146,7 @@ A resposta será:
   }
 }
 ```
+![graphql.png](/img/graphql.png)
 
 ---
 
@@ -175,6 +177,7 @@ Resposta:
   ]
 }
 ```
+![evans_rpc.png](/img/evans_grpc.png)
 
 ---
 
